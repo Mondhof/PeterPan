@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>社区亲子手作活动方案 · 彼得潘艺术学苑</title>
+<meta name="description" content="彼得潘艺术学苑社区亲子手作课：6 个备选活动，适合 5–10 岁儿童。">
+<style>
+  :root {
+    --red: #9a0a0a;
+    --red-soft: #f6e7e4;
+    --navy: #231a4b;
+    --navy-soft: #ecebf3;
+    --ink: #2b2633;
+    --muted: #6d6676;
+    --bg: #faf6f0;
+    --card: #ffffff;
+    --line: #ece3d6;
+    --gold: #b68a45;
+    --serif: "Songti SC", "STSong", "Noto Serif SC", "Source Han Serif SC", "SimSun", serif;
+    --sans: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    color-scheme: light;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 15px/1.75 var(--sans);
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 0 16px; }
+
+  /* ---------- 封面 ---------- */
+  .hero {
+    position: relative;
+    color: #fff;
+    background:
+      linear-gradient(180deg, rgba(35, 26, 75, .62) 0%, rgba(35, 26, 75, .78) 55%, rgba(35, 26, 75, .96) 100%),
+      url("assets/photos/hero.jpg") center 40% / cover no-repeat;
+    padding: 28px 0 88px;
+  }
+  .hero-logo { width: 210px; }
+  .hero-eyebrow {
+    margin: 64px 0 10px;
+    font-size: 13px;
+    letter-spacing: .28em;
+    color: #e9d7b5;
+  }
+  .hero h1 {
+    margin: 0;
+    font: 700 clamp(30px, 7vw, 46px)/1.25 var(--serif);
+    letter-spacing: .04em;
+  }
+  .hero-sub {
+    margin: 16px 0 0;
+    max-width: 30em;
+    font-size: 16px;
+    color: rgba(255, 255, 255, .86);
+  }
+
+  /* ---------- 活动信息 ---------- */
+  .info {
+    position: relative;
+    margin-top: -56px;
+    background: var(--card);
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(35, 26, 75, .10);
+    padding: 22px 22px 8px;
+  }
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 28px;
+  }
+  .info-item { padding: 12px 0 14px; border-bottom: 1px solid var(--line); }
+  .info-item.full { grid-column: 1 / -1; }
+  .info-item:last-child { border-bottom: 0; }
+  .info-label { font-size: 12px; letter-spacing: .12em; color: var(--muted); }
+  .info-value { margin-top: 2px; font-size: 17px; font-weight: 600; color: var(--navy); }
+  .slots { list-style: none; margin: 6px 0 0; padding: 0; display: grid; gap: 8px; }
+  .slots li {
+    display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+    background: var(--navy-soft); border-radius: 10px; padding: 8px 12px;
+    font-weight: 600; color: var(--navy);
+  }
+  .slots .day { font-size: 12px; font-weight: 500; color: var(--muted); }
+  .places { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+  .places span {
+    border: 1px solid var(--line); border-radius: 999px; padding: 3px 12px;
+    font-weight: 600; color: var(--navy); background: #fff;
+  }
+  .note { margin: 6px 0 0; font-size: 13px; color: var(--muted); }
+
+  /* ---------- 通用标题 ---------- */
+  .section { margin-top: 44px; }
+  .section-title {
+    display: flex; align-items: center; gap: 12px;
+    margin: 0 0 6px;
+    font: 700 24px/1.3 var(--serif);
+    color: var(--navy);
+  }
+  .section-title::before {
+    content: ""; width: 6px; height: 22px; border-radius: 3px; background: var(--red);
+  }
+  .section-desc { margin: 0 0 18px; color: var(--muted); }
+
+  /* 活动速览 */
+  .quick { display: flex; flex-wrap: wrap; gap: 8px; }
+  .quick a {
+    text-decoration: none;
+    background: #fff; border: 1px solid var(--line); border-radius: 999px;
+    padding: 6px 14px; font-size: 14px; color: var(--ink);
+  }
+  .quick b { color: var(--red); margin-right: 4px; font-family: var(--serif); }
+
+  /* ---------- 分类 ---------- */
+  .cat { margin-top: 40px; }
+  .cat-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+  .cat-no {
+    font: 700 15px var(--serif); color: #fff; background: var(--navy);
+    border-radius: 6px; padding: 2px 10px; letter-spacing: .1em;
+  }
+  .cat-name { margin: 0; font: 700 22px/1.3 var(--serif); color: var(--navy); }
+  .cat-tagline { color: var(--muted); font-size: 14px; }
+
+  /* ---------- 活动卡片 ---------- */
+  .act {
+    background: var(--card);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 6px 22px rgba(35, 26, 75, .07);
+    margin-bottom: 22px;
+    scroll-margin-top: 16px;
+  }
+  .ph { position: relative; margin: 0; overflow: hidden; background: #eee; }
+  .ph > img:first-child, .strip img { width: 100%; height: 100%; object-fit: cover; }
+  .ph.main { aspect-ratio: 16 / 9; }
+  /* 图片类型标签 */
+  .kind {
+    position: absolute; left: 10px; top: 10px;
+    font-size: 11px; letter-spacing: .06em; color: #fff;
+    background: rgba(0, 0, 0, .45); border-radius: 999px; padding: 1px 9px;
+  }
+  /* logo 直接压在照片上，不垫底：暗处用白色版，亮处用主色版 */
+  .wm { position: absolute; right: 14px; bottom: 12px; width: 124px; height: auto; }
+  .wm.w { filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .35)); }
+  .thumbs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 4px;
+    margin-top: 4px;
+  }
+  .thumbs .ph { aspect-ratio: 4 / 3; }
+  .thumbs .wm { width: 66px; right: 8px; bottom: 7px; }
+  .thumbs .kind { left: 6px; top: 6px; font-size: 10px; padding: 0 7px; }
+  .strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; height: 100%; background: #000; }
+
+  .act-body { padding: 20px 22px 22px; }
+  .act-head { display: flex; align-items: baseline; gap: 12px; }
+  .act-no { font: 700 30px/1 var(--serif); color: var(--red); }
+  .act h3 { margin: 0; font: 700 22px/1.35 var(--serif); color: var(--navy); }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 0; }
+  .tag {
+    font-size: 12px; padding: 1px 10px; border-radius: 999px;
+    background: var(--navy-soft); color: var(--navy);
+  }
+  .tag.hot { background: var(--red); color: #fff; }
+  .tag.gold { background: #f5ecdc; color: #8a6420; }
+  .lead { margin: 12px 0 0; font-size: 16px; }
+  .act h4 {
+    margin: 20px 0 8px; font-size: 13px; letter-spacing: .14em; color: var(--gold);
+  }
+  .steps { list-style: none; counter-reset: s; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .steps li { counter-increment: s; display: flex; gap: 10px; align-items: flex-start; }
+  .steps li::before {
+    content: counter(s);
+    flex: none; width: 22px; height: 22px; margin-top: 3px; border-radius: 50%;
+    background: var(--red-soft); color: var(--red);
+    font: 700 12px/22px var(--sans); text-align: center;
+  }
+  .tiers { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .tier { border-radius: 12px; padding: 10px 14px; background: #faf7f2; border: 1px solid var(--line); }
+  .tier b { display: block; font-size: 13px; color: var(--navy); }
+  .tier p { margin: 2px 0 0; font-size: 14px; }
+  .meta { margin: 18px 0 0; display: grid; gap: 10px; }
+  .meta div { display: flex; gap: 12px; align-items: baseline; }
+  .meta dt {
+    flex: none; font-size: 12px; font-weight: 600; letter-spacing: .06em;
+    color: var(--red); border: 1px solid #e8c9c4; border-radius: 6px; padding: 0 8px;
+  }
+  .meta dd { margin: 0; font-size: 14px; }
+
+  /* ---------- 参考流程 ---------- */
+  .flow { list-style: none; margin: 0; padding: 0; position: relative; }
+  .flow li { position: relative; padding: 0 0 18px 30px; }
+  .flow li::before {
+    content: ""; position: absolute; left: 6px; top: 8px; width: 10px; height: 10px;
+    border-radius: 50%; background: var(--red);
+  }
+  .flow li::after {
+    content: ""; position: absolute; left: 10px; top: 20px; bottom: 0; width: 2px; background: var(--line);
+  }
+  .flow li:last-child::after { display: none; }
+  .flow .t { font-weight: 700; color: var(--navy); margin-right: 8px; }
+
+  /* ---------- 选择说明 ---------- */
+  .pick {
+    margin-top: 44px;
+    background: var(--navy);
+    color: #fff;
+    border-radius: 18px;
+    padding: 24px 22px;
+  }
+  .pick h2 { margin: 0 0 8px; font: 700 22px/1.35 var(--serif); }
+  .pick p { margin: 0; color: rgba(255, 255, 255, .86); }
+  .pick strong { color: #f1d9a8; }
+
+  /* ---------- 页脚 ---------- */
+  footer { margin-top: 44px; background: #fff; border-top: 1px solid var(--line); padding: 28px 0 36px; }
+  .foot-logo { width: 220px; margin: 0 auto 20px; }
+  .foot-bar { width: 100%; margin: 0 auto; }
+  .foot-mobile { display: none; }
+  .campus { display: grid; gap: 14px; }
+  .campus h5 { margin: 0; font-size: 15px; color: var(--navy); }
+  .campus p { margin: 2px 0 0; font-size: 14px; }
+  .campus a { font-weight: 700; font-size: 17px; text-decoration: none; color: var(--ink); }
+  .qrs { display: flex; gap: 16px; justify-content: center; margin-top: 18px; }
+  .qrs img { width: 120px; border: 1px solid var(--line); border-radius: 8px; padding: 4px; background: #fff; }
+  .courses { margin: 16px 0 0; font-size: 13px; color: var(--muted); text-align: center; }
+  .credit { margin: 22px 0 0; font-size: 12px; color: var(--muted); text-align: center; }
+
+  @media (max-width: 640px) {
+    .hero { padding-bottom: 76px; }
+    .hero-logo { width: 170px; }
+    .hero-eyebrow { margin-top: 44px; }
+    .info { padding: 16px 18px 4px; }
+    .info-grid { grid-template-columns: 1fr; }
+    .act-body { padding: 18px 18px 20px; }
+    .tiers { grid-template-columns: 1fr; }
+    .ph.main { aspect-ratio: 14 / 9; }
+    .wm { width: 100px; right: 10px; bottom: 9px; }
+    .thumbs { grid-template-columns: repeat(3, 1fr); }
+    .thumbs.four { grid-template-columns: repeat(2, 1fr); }
+    .thumbs .wm { width: 50px; right: 6px; bottom: 5px; }
+    .thumbs .kind { left: 4px; top: 4px; }
+    .foot-bar { display: none; }
+    .foot-mobile { display: block; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <img class="hero-logo" src="assets/logo-white.png" alt="彼得潘艺术学苑 Peter Pan Arts Academy">
+    <p class="hero-eyebrow">社区亲子手作课 · 活动方案</p>
+    <h1>把一堂好玩的手作课<br>带进社区</h1>
+    <p class="hero-sub">彼得潘艺术学苑老师带着材料进社区，陪孩子动手做、开口讲，做完的作品可以带回家。以下 6 个备选活动，请社区选出意向。</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="info" aria-label="活动信息">
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="info-label">活动对象</div>
+        <div class="info-value">5–10 岁儿童</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">活动人数</div>
+        <div class="info-value">每场约 20–30 组</div>
+      </div>
+      <div class="info-item full">
+        <div class="info-label">暂定时间</div>
+        <ul class="slots">
+          <li>11 月 21 日 · 上午 9:30–11:30 <span class="day">周六</span></li>
+          <li>11 月 22 日 · 上午 9:30–11:30 <span class="day">周日</span></li>
+          <li>11 月 22 日 · 下午 15:00–17:00 <span class="day">周日</span></li>
+        </ul>
+      </div>
+      <div class="info-item full">
+        <div class="info-label">活动地点</div>
+        <div class="places">
+          <span>品润剑桥郡</span>
+          <span>路桥观江府</span>
+          <span>碧桂园云樾江境</span>
+        </div>
+        <p class="note">三场分别在三个小区举行，具体哪一场在哪个小区，与社区确认后再定。</p>
+      </div>
+      <div class="info-item full">
+        <div class="info-label">活动形式</div>
+        <div class="info-value">彼得潘老师带手工课进社区，现场授课、带孩子动手</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">6 个备选活动</h2>
+    <p class="section-desc">分两类，每个活动都照顾到 5–10 岁的年龄跨度：小的能做完，大的有加难度的玩法。</p>
+    <nav class="quick" aria-label="活动速览">
+      <a href="#a1"><b>01</b>秋日丰收花环</a>
+      <a href="#a2"><b>02</b>「秋天的第一杯」香薰杯</a>
+      <a href="#a3"><b>03</b>秋日落叶水晶球</a>
+      <a href="#a4"><b>04</b>非遗皮影小剧场</a>
+      <a href="#a5"><b>05</b>非遗漆扇</a>
+      <a href="#a6"><b>06</b>火漆印章 · 给一年后的信</a>
+    </nav>
+  </section>
+
+  <!-- 一、秋日限定 -->
+  <section class="cat">
+    <div class="cat-head">
+      <span class="cat-no">一</span>
+      <h2 class="cat-name">秋日限定</h2>
+      <span class="cat-tagline">把秋天做成作品带回家</span>
+    </div>
+
+    <article class="act" id="a1">
+      <figure class="ph main">
+        <img src="assets/photos/hh-1.jpg" alt="点缀小南瓜和浆果的秋日花环" loading="lazy">
+        <span class="kind">成品效果</span>
+        <img class="wm w" src="assets/logo-white.png" alt="彼得潘艺术学苑">
+      </figure>
+      <div class="thumbs four">
+        <figure class="ph"><img src="assets/photos/hh-2.jpg" alt="孩子捧着一大把秋天的落叶" loading="lazy"><span class="kind">现场</span><img class="wm w" src="assets/logo-white.png" alt=""></figure>
+        <figure class="ph"><img src="assets/photos/hh-3.jpg" alt="大家围着长桌一起做花环" loading="lazy"><span class="kind">现场</span><img class="wm w" src="assets/logo-white.png" alt=""></figure>
+        <figure class="ph"><img src="assets/photos/hh-5.jpg" alt="双手在藤圈上编插植物" loading="lazy"><span class="kind">制作过程</span><img class="wm w" src="assets/logo-white.png" alt=""></figure>
+        <figure class="ph"><img src="assets/photos/hh-4.jpg" alt="干橙片和丝带等花环材料" loading="lazy"><span class="kind">材料</span><img class="wm" src="assets/logo.png" alt=""></figure>
+      </div>
+      <div class="act-body">
+        <div class="act-head"><span class="act-no">01</span><h3>秋日丰收花环</h3></div>
+        <div class="tags"><span class="tag hot">推荐</span><span class="tag gold">秋日限定</span><span class="tag">成品能挂家门口</span></div>
+        <p class="lead">在藤圈上粘松果、枫叶、干橙片和麦穗，做一个能挂在家门口的秋日花环。全场的花环挂满一面墙，就是现场最出片的打卡点。</p>
+        <h4>怎么玩</h4>
+        <ol class="steps">
+          <li>老师展示几款秋日花环，讲配色和“疏密”的小窍门</li>
+          <li>挑选松果、枫叶、干橙片、麦穗，先在藤圈上摆出布局</li>
+          <li>用低温胶枪一样样固定，家长协助、老师看护</li>
+          <li>系上丝带和挂绳，把花环挂上作品墙合影</li>
+        </ol>
+        <h4>小的大的都能玩</h4>
+        <div class="tiers">
+          <div class="tier"><b>5–7 岁</b><p>选 3–4 种材料，照老师示范的位置粘好</p></div>
+          <div class="tier"><b>8–10 岁</b><p>自己设计配色和疏密，加上麦穗、丝带蝴蝶结等细节</p></div>
+        </div>
+        <dl class="meta">
+          <div><dt>拍照亮点</dt><dd>几十个花环挂满一面墙；孩子把花环举在脸前合影</dd></div>
+          <div><dt>场地需要</dt><dd>室内外均可，需要桌椅和电源（胶枪用），再准备一面能挂作品的墙或展架</dd></div>
+        </dl>
+      </div>
+    </article>
+
+    <article class="act" id="a2">
+      <figure class="ph main">
+        <img src="assets/photos/xx-1.jpg" alt="点缀干橙片和肉桂的香薰蜡烛" loading="lazy">
+        <span class="kind">成品效果</span>
+        <img class="wm w" src="assets/logo-white.png" alt="彼得潘艺术学苑">
+      </figure>
+      <div class="thumbs four">
+        <figure class="ph"><img src="assets/photos/xx-2.jpg" alt="锅里正在融化的彩色蜡" loading="lazy"><span class="kind">制作过程</span><img class="wm w" src="assets/logo-white.png" alt=""></figure>
+        <figure class="ph"><img src="assets/photos/xx-3.jpg" alt="把融好的蜡倒进杯子" loading="lazy"><span class="kind">制作过程</span><img class="wm w" src="assets/logo-white.png" alt=""></figure>
+        <figure class="ph"><img src="assets/photos/xx-4.jpg" alt="一片片干橙片" loading="lazy"><span class="kind">材料</span><img class="wm w" src="assets/logo-white.png" alt=""></figure>
+        <figure class="ph"><img src="assets/photos/xx-5.jpg" alt="秋日桌面上捧着一杯热饮" loading="lazy"><span class="kind">氛围</span><img class="wm w" src="assets/logo-white.png" alt=""></figure>
+      </div>
+      <div class="act-body">
+        <div class="act-head"><span class="act-no">02</span><h3>「秋天的第一杯」香薰杯</h3></div>
+        <div class="tags"><span class="tag gold">秋日限定</span><span class="tag">晶莹透明</span><span class="tag">像开了一家小饮品店</span></div>
+        <p class="lead">把一杯香薰蜡烛做成「秋天的第一杯果茶」：杯里摆上干橙片、肉桂棒和“冰块”，倒入琥珀色的果冻蜡，凝固后就是一杯不会喝完的秋天。</p>
+        <h4>怎么玩</h4>
+        <ol class="steps">
+          <li>选一只透明杯，想好要做“橙子果茶”还是“冰美式”</li>
+          <li>摆好干橙片、肉桂、蜡做的“冰块”等装饰，固定烛芯</li>
+          <li>老师统一倒入加热好的果冻蜡，孩子不碰热蜡</li>
+          <li>等待凝固时，给自己的饮品起名字、画杯贴、写一句“菜单介绍”</li>
+        </ol>
+        <h4>小的大的都能玩</h4>
+        <div class="tiers">
+          <div class="tier"><b>5–7 岁</b><p>选 2–3 种装饰摆好，画一张杯贴</p></div>
+          <div class="tier"><b>8–10 岁</b><p>设计配色和装饰位置，给饮品起名并上台介绍自己的“招牌饮品”</p></div>
+        </div>
+        <dl class="meta">
+          <div><dt>拍照亮点</dt><dd>一排“秋日饮品”摆在桌上，像一家小小饮品店</dd></div>
+          <div><dt>场地需要</dt><dd>室内，需要桌椅和电源（熔蜡用）；熔蜡和倒蜡全程由老师操作，成品要静置凝固后再带走</dd></div>
+        </dl>
+      </div>
+    </article>
+
+    <article class="act" id="a3">
+      <figure class="ph main">
+        <img src="assets/photos/sj-1.jpg" alt="木桌上的红色小蘑菇和松果秋日小景" loading="lazy">
+        <span class="kind">氛围</span>
+        <img class="wm w" src="assets/logo-white.png" alt="彼得潘艺术学苑">
+      </figure>
+      <div class="thumbs four">
+        <figure class="ph"><img src="assets/photos/sj-2.jpg" alt="手里托着一个小水晶球" loading="lazy"><span class="kind">实物</span><img class="wm" src="assets/logo.png" alt=""></figure>
+        <figure class="ph"><img src="assets/photos/sj-3.jpg" alt="蘑菇小屋摆件" loading="lazy"><span class="kind">小摆件</span><img class="wm w" src="assets/logo-white.png" alt=""></figure>
+        <figure class="ph"><img src="assets/photos/sj-4.jpg" alt="小手举着一片红枫叶" loading="lazy"><span class="kind">现场</span><img class="wm w" src="assets/logo-white.png" alt=""></figure>
+        <figure class="ph"><img src="assets/photos/sj-5.jpg" alt="苔藓里长出的小蘑菇" loading="lazy"><span class="kind">氛围</span><img class="wm w" src="assets/logo-white.png" alt=""></figure>
+      </div>
+      <div class="act-body">
+        <div class="act-head"><span class="act-no">03</span><h3>秋日落叶水晶球</h3></div>
+        <div class="tags"><span class="tag gold">秋日限定</span><span class="tag">不用加热，最安全</span><span class="tag">摇一摇落叶纷飞</span></div>
+        <p class="lead">在水晶球里搭一个秋日小森林：小蘑菇、小松鼠、小南瓜，再撒进枫叶亮片和金粉，一摇就是落叶纷飞。</p>
+        <h4>怎么玩</h4>
+        <ol class="steps">
+          <li>挑选小摆件，在底座上搭出自己的秋日小场景</li>
+          <li>用胶把摆件固定在底座上</li>
+          <li>往球里加入清水、甘油、枫叶亮片和金粉</li>
+          <li>老师帮忙拧紧封口，摇一摇，看“落叶”慢慢飘下来</li>
+        </ol>
+        <h4>小的大的都能玩</h4>
+        <div class="tiers">
+          <div class="tier"><b>5–7 岁</b><p>选 1–2 个摆件，撒入亮片</p></div>
+          <div class="tier"><b>8–10 岁</b><p>自己设计场景故事、搭配多层摆件，给作品起名字</p></div>
+        </div>
+        <dl class="meta">
+          <div><dt>拍照亮点</dt><dd>孩子举起水晶球、对着光摇一摇的瞬间</dd></div>
+          <div><dt>场地需要</dt><dd>室内外均可，需要桌椅；全程不用加热</dd></div>
+        </dl>
+      </div>
+    </article>
+  </section>
+
+  <!-- 二、非遗 · 新中式 -->
+  <section class="cat">
+    <div class="cat-head">
+      <span class="cat-no">二</span>
+      <h2 class="cat-name">非遗 · 新中式</h2>
+      <span class="cat-tagline">有调性的传统手作</span>
+    </div>
+
+    <article class="act" id="a4">
+      <figure class="ph main">
+        <img src="assets/photos/py-1.jpg" alt="孩子们手举皮影在灯光下表演" loading="lazy">
+        <span class="kind">现场</span>
+        <img class="wm w" src="assets/logo-white.png" alt="彼得潘艺术学苑">
+      </figure>
+      <div class="thumbs">
+        <figure class="ph"><img src="assets/photos/py-2.jpg" alt="幕布上的皮影剪影" loading="lazy"><span class="kind">成品效果</span><img class="wm" src="assets/logo.png" alt=""></figure>
+        <figure class="ph"><img src="assets/photos/py-3.jpg" alt="孩子在灯光下玩手影" loading="lazy"><span class="kind">现场</span><img class="wm w" src="assets/logo-white.png" alt=""></figure>
+        <figure class="ph"><img src="assets/photos/py-4.jpg" alt="暖色幕布上的人影" loading="lazy"><span class="kind">氛围</span><img class="wm w" src="assets/logo-white.png" alt=""></figure>
+      </div>
+      <div class="act-body">
+        <div class="act-head"><span class="act-no">04</span><h3>非遗皮影小剧场</h3></div>
+        <div class="tags"><span class="tag">非遗</span><span class="tag gold">动手 + 开口表达</span></div>
+        <p class="lead">孩子自己画、剪、组装一个会动的皮影角色，再到幕布后面打着灯演一段小故事。不光动手，还要开口说。</p>
+        <h4>怎么玩</h4>
+        <ol class="steps">
+          <li>听老师讲皮影的来历，看一段示范表演</li>
+          <li>在卡纸上画角色、涂色、剪下来</li>
+          <li>用两脚钉连好关节、插上竹签，角色就能动了</li>
+          <li>分组上台，在幕布后面表演</li>
+        </ol>
+        <h4>小的大的都能玩</h4>
+        <div class="tiers">
+          <div class="tier"><b>5–7 岁</b><p>用印好的模板涂色、剪大轮廓，上台说一句台词</p></div>
+          <div class="tier"><b>8–10 岁</b><p>自己设计角色、做可动关节，编一段小对白</p></div>
+        </div>
+        <dl class="meta">
+          <div><dt>拍照亮点</dt><dd>灯一亮，剪影投到幕布上：家长在幕前拍，孩子在幕后演</dd></div>
+          <div><dt>场地需要</dt><dd>室内或能遮光的角落，一个电源（接灯）</dd></div>
+        </dl>
+      </div>
+    </article>
+
+    <article class="act" id="a5">
+      <figure class="ph main">
+        <img src="assets/photos/qs-1.jpg" alt="手持一把手绘花卉的红色扇子" loading="lazy">
+        <span class="kind">实物</span>
+        <img class="wm w" src="assets/logo-white.png" alt="彼得潘艺术学苑">
+      </figure>
+      <div class="thumbs">
+        <figure class="ph"><img src="assets/photos/qs-2.jpg" alt="手绘花鸟扇面" loading="lazy"><span class="kind">实物</span><img class="wm" src="assets/logo.png" alt=""></figure>
+        <figure class="ph"><img src="assets/photos/qs-3.jpg" alt="红色漂漆流纹" loading="lazy"><span class="kind">漂漆纹理</span><img class="wm w" src="assets/logo-white.png" alt=""></figure>
+        <figure class="ph"><img src="assets/photos/qs-4.jpg" alt="蓝紫色漂漆流纹" loading="lazy"><span class="kind">漂漆纹理</span><img class="wm" src="assets/logo.png" alt=""></figure>
+      </div>
+      <div class="act-body">
+        <div class="act-head"><span class="act-no">05</span><h3>非遗漆扇</h3></div>
+        <div class="tags"><span class="tag">非遗</span><span class="tag gold">最出片</span><span class="tag">每把都独一无二</span></div>
+        <p class="lead">把漆滴在水面上，挑出流动的花纹，扇子一沉一转，花纹就印在了扇面上。</p>
+        <h4>怎么玩</h4>
+        <ol class="steps">
+          <li>选好颜色，把漆滴到水面上</li>
+          <li>用竹签轻轻挑动，拉出纹路</li>
+          <li>扇面入水、旋转、提起</li>
+          <li>晾干后在扇面上写字、画点缀</li>
+        </ol>
+        <h4>小的大的都能玩</h4>
+        <div class="tiers">
+          <div class="tier"><b>5–7 岁</b><p>选 1–2 种颜色，漂一次</p></div>
+          <div class="tier"><b>8–10 岁</b><p>多色叠加、二次漂漆，再在扇面上手绘、题字</p></div>
+        </div>
+        <dl class="meta">
+          <div><dt>拍照亮点</dt><dd>扇子从水里提起来的那一下，全场都会“哇”</dd></div>
+          <div><dt>场地需要</dt><dd>户外或通风好的场地（漆有气味），需要几处放水盆的桌位</dd></div>
+        </dl>
+      </div>
+    </article>
+
+    <article class="act" id="a6">
+      <figure class="ph main">
+        <img src="assets/photos/hq-1.jpg" alt="系着干花、封着火漆印的信" loading="lazy">
+        <span class="kind">成品效果</span>
+        <img class="wm" src="assets/logo.png" alt="彼得潘艺术学苑">
+      </figure>
+      <div class="thumbs four">
+        <figure class="ph"><img src="assets/photos/hq-2.jpg" alt="孩子趴在桌上写写画画" loading="lazy"><span class="kind">现场</span><img class="wm w" src="assets/logo-white.png" alt=""></figure>
+        <figure class="ph"><img src="assets/photos/hq-3.jpg" alt="火漆印章和融化的火漆" loading="lazy"><span class="kind">实物</span><img class="wm" src="assets/logo.png" alt=""></figure>
+        <figure class="ph"><img src="assets/photos/hq-4.jpg" alt="各种颜色的火漆印" loading="lazy"><span class="kind">实物</span><img class="wm w" src="assets/logo-white.png" alt=""></figure>
+        <figure class="ph"><img src="assets/photos/hq-5.jpg" alt="一组封好火漆的卡片" loading="lazy"><span class="kind">成品效果</span><img class="wm" src="assets/logo.png" alt=""></figure>
+      </div>
+      <div class="act-body">
+        <div class="act-head"><span class="act-no">06</span><h3>火漆印章 · 写给一年后的自己</h3></div>
+        <div class="tags"><span class="tag">新中式</span><span class="tag gold">仪式感</span><span class="tag">开口：读给家人听</span></div>
+        <p class="lead">孩子给一年后的自己写（或画）一封信，滴上火漆、按下印章封好，交给家长保管，明年再拆开。</p>
+        <h4>怎么玩</h4>
+        <ol class="steps">
+          <li>写或画一封给一年后自己的信，不会写字就画</li>
+          <li>挑信封、配干花，把信装饰好</li>
+          <li>滴上火漆，按下印章封口</li>
+          <li>自愿上台，读一句“给一年后的我”</li>
+        </ol>
+        <h4>小的大的都能玩</h4>
+        <div class="tiers">
+          <div class="tier"><b>5–7 岁</b><p>画一幅“一年后的我”，老师帮忙滴蜡，自己按印章</p></div>
+          <div class="tier"><b>8–10 岁</b><p>写一段话，在老师看护下自己滴蜡、压印，再加干花装饰</p></div>
+        </div>
+        <dl class="meta">
+          <div><dt>拍照亮点</dt><dd>印章抬起、花纹出现的一瞬间；孩子举着封好的信合影</dd></div>
+          <div><dt>场地需要</dt><dd>室内外均可，需要桌椅和电源（火漆加热用），老师全程看护</dd></div>
+        </dl>
+      </div>
+    </article>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">参考流程</h2>
+    <p class="section-desc">每场 2 小时，六个活动都按这个节奏，现场可按情况调整。</p>
+    <ol class="flow">
+      <li><span class="t">第 0–15 分钟</span>签到入场，领取材料</li>
+      <li><span class="t">第 15–30 分钟</span>暖场：老师讲这个活动背后的小故事</li>
+      <li><span class="t">第 30–90 分钟</span>动手制作，老师分组指导</li>
+      <li><span class="t">第 90–120 分钟</span>作品展示、上台表演或分享，集体合影</li>
+    </ol>
+  </section>
+
+  <section class="pick">
+    <h2>请社区选出意向活动</h2>
+    <p>选好后直接回复对接老师<strong>活动编号</strong>即可，例如「选 01」。我们按选定的活动备课、备料。</p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <img class="foot-logo" src="assets/logo.png" alt="彼得潘艺术学苑 Peter Pan Arts Academy">
+    <img class="foot-bar" src="assets/footer.png" alt="彼得潘艺术学苑鼎盛校区、恒基校区地址电话及二维码">
+    <div class="foot-mobile">
+      <div class="campus">
+        <div>
+          <h5># 鼎盛校区</h5>
+          <p>百色市龙景区鼎盛天街音乐喷泉旁F218-225商铺</p>
+          <a href="tel:18877612838">188 7761 2838</a>
+        </div>
+        <div>
+          <h5># 恒基校区</h5>
+          <p>百色市右江区新兴路18号恒基广场-4001商铺</p>
+          <a href="tel:18007765390">180 0776 5390</a>
+        </div>
+      </div>
+      <div class="qrs">
+        <img src="assets/qr-left.png" alt="彼得潘艺术学苑二维码">
+        <img src="assets/qr-right.png" alt="微信二维码">
+      </div>
+      <p class="courses">[ 开设课程 ] 中国舞 / 芭蕾舞 / 美术 / 思维口才 / 萌萌兔舞蹈启蒙</p>
+    </div>
+    <p class="credit">文中图片均为效果参考图（来源：Unsplash、Pexels 免费可商用图库），实际以现场作品为准。</p>
+  </div>
+</footer>
+
+</body>
+</html>
